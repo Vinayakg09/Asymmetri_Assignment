@@ -14,3 +14,9 @@ class SlideEvent extends MyAppBlocEvent {
 
   SlideEvent(this.slide);
 }
+
+class BarEvent extends MyAppBlocEvent {
+  final int value;
+  final String lable;
+  BarEvent({required this.lable, required this.value});
+}

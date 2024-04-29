@@ -1,10 +1,12 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class MyProgressBar extends StatefulWidget {
   Color color;
   int duration;
-  MyProgressBar({required this.color, required this.duration, super.key});
+  MyProgressBar(
+      {required this.color,
+      required this.duration,
+      super.key});
 
   @override
   State<MyProgressBar> createState() => _MyProgressBarState();
@@ -20,7 +22,7 @@ class _MyProgressBarState extends State<MyProgressBar>
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: ((5 / widget.duration).toInt()).clamp(0, 60)),
+      duration: Duration(seconds: (5 ~/ widget.duration).clamp(0, 60)),
     );
 
     animation = Tween(begin: 0.0, end: 1.0)
@@ -35,7 +37,7 @@ class _MyProgressBarState extends State<MyProgressBar>
     return ShaderMask(
       shaderCallback: (Rect bounds) {
         return LinearGradient(
-          colors: [startColor!,widget.color, Colors.black],
+          colors: [startColor!, widget.color, Colors.black],
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
         ).createShader(bounds);
@@ -47,7 +49,7 @@ class _MyProgressBarState extends State<MyProgressBar>
           builder: (context, child) {
             return LinearProgressIndicator(
               value: animation.value,
-              minHeight: 15,
+              minHeight: 1,
               backgroundColor: Colors.transparent,
               borderRadius: BorderRadius.circular(20),
             );

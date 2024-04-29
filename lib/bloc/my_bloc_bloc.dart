@@ -20,5 +20,24 @@ class MyAppBloc extends Bloc<MyAppBlocEvent, MyAppBlocState> {
         emit(ErrorState(e.toString()));
       }
     });
+    on<BarEvent>((event, emit) {
+      try {
+        if (event.lable == "Total Items") {
+          if (event.value >= 0 && event.value <= 30) {
+            emit(BarNumState(value: event.value));
+          } else {
+            emit(ErrorState("Bar Values can't be more than 30"));
+          }
+        } else {
+          if (event.value >= 0 && event.value <= 4) {
+            emit(BarInLineState(value: event.value));
+          } else {
+            emit(ErrorState("Only 4 bar are allowed in one line"));
+          }
+        }
+      } catch (e) {
+        emit(ErrorState(e.toString()));
+      }
+    });
   }
 }

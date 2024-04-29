@@ -1,6 +1,6 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-class MyData{
+class MyData {
   List<String> colorNames = ["Blue", "Green", "Red", "Purple"];
   List<Color> colors = [
     Colors.blue,
@@ -8,6 +8,4 @@ class MyData{
     Colors.red,
     Colors.purple,
   ];
-
 }
-  //List gradientColors = []

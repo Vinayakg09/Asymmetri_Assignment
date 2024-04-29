@@ -8,8 +8,6 @@ class MySlider extends StatelessWidget {
   MySlider({required this.color, required this.current,super.key});
 
   Widget build(BuildContext context) {
-    //double current = 0;
-    
         return SizedBox(
           width: 300,
           child: Slider(

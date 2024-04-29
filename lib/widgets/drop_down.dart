@@ -11,13 +11,6 @@ class MyDropDown extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return BlocConsumer<MyAppBloc, MyAppBlocState>(
-    // listener: (context, state) {
-    //   if (state is ColorSelected) {
-    //     initialSelect = colorNames[colors.indexOf(state.color)];
-    //   }
-    // },
-    // builder: (context, state) {
     return SizedBox(
       width: 250,
       child: DropdownButton(
@@ -36,6 +29,5 @@ class MyDropDown extends StatelessWidget {
       ),
     );
   }
-  // );
 }
-// }
+
