@@ -85,7 +85,7 @@ class Home extends StatelessWidget {
                   ),
                   SizedBox(
                     height: 500,
-                    width: 220,
+                    width: BarInLine == 1 ? 220 : BarInLine == 2 ?  320 : 2500/(BarInLine * 2),
                     child: GridView.count(
                       childAspectRatio: 10,
                       crossAxisCount: BarInLine,
